@@ -1,0 +1,630 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>个人简历</title><style>
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.highlight-default {
+}
+.highlight-gray {
+	color: rgb(155,154,151);
+}
+.highlight-brown {
+	color: rgb(100,71,58);
+}
+.highlight-orange {
+	color: rgb(217,115,13);
+}
+.highlight-yellow {
+	color: rgb(223,171,1);
+}
+.highlight-teal {
+	color: rgb(15,123,108);
+}
+.highlight-blue {
+	color: rgb(11,110,153);
+}
+.highlight-purple {
+	color: rgb(105,64,165);
+}
+.highlight-pink {
+	color: rgb(173,26,114);
+}
+.highlight-red {
+	color: rgb(224,62,62);
+}
+.highlight-gray_background {
+	background: rgb(235,236,237);
+}
+.highlight-brown_background {
+	background: rgb(233,229,227);
+}
+.highlight-orange_background {
+	background: rgb(250,235,221);
+}
+.highlight-yellow_background {
+	background: rgb(251,243,219);
+}
+.highlight-teal_background {
+	background: rgb(221,237,234);
+}
+.highlight-blue_background {
+	background: rgb(221,235,241);
+}
+.highlight-purple_background {
+	background: rgb(234,228,242);
+}
+.highlight-pink_background {
+	background: rgb(244,223,235);
+}
+.highlight-red_background {
+	background: rgb(251,228,228);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(55, 53, 47, 0.6);
+	fill: rgba(55, 53, 47, 0.6);
+}
+.block-color-brown {
+	color: rgb(100,71,58);
+	fill: rgb(100,71,58);
+}
+.block-color-orange {
+	color: rgb(217,115,13);
+	fill: rgb(217,115,13);
+}
+.block-color-yellow {
+	color: rgb(223,171,1);
+	fill: rgb(223,171,1);
+}
+.block-color-teal {
+	color: rgb(15,123,108);
+	fill: rgb(15,123,108);
+}
+.block-color-blue {
+	color: rgb(11,110,153);
+	fill: rgb(11,110,153);
+}
+.block-color-purple {
+	color: rgb(105,64,165);
+	fill: rgb(105,64,165);
+}
+.block-color-pink {
+	color: rgb(173,26,114);
+	fill: rgb(173,26,114);
+}
+.block-color-red {
+	color: rgb(224,62,62);
+	fill: rgb(224,62,62);
+}
+.block-color-gray_background {
+	background: rgb(235,236,237);
+}
+.block-color-brown_background {
+	background: rgb(233,229,227);
+}
+.block-color-orange_background {
+	background: rgb(250,235,221);
+}
+.block-color-yellow_background {
+	background: rgb(251,243,219);
+}
+.block-color-teal_background {
+	background: rgb(221,237,234);
+}
+.block-color-blue_background {
+	background: rgb(221,235,241);
+}
+.block-color-purple_background {
+	background: rgb(234,228,242);
+}
+.block-color-pink_background {
+	background: rgb(244,223,235);
+}
+.block-color-red_background {
+	background: rgb(251,228,228);
+}
+.select-value-color-default { background-color: rgba(206,205,202,0.5); }
+.select-value-color-gray { background-color: rgba(155,154,151, 0.4); }
+.select-value-color-brown { background-color: rgba(140,46,0,0.2); }
+.select-value-color-orange { background-color: rgba(245,93,0,0.2); }
+.select-value-color-yellow { background-color: rgba(233,168,0,0.2); }
+.select-value-color-green { background-color: rgba(0,135,107,0.2); }
+.select-value-color-blue { background-color: rgba(0,120,223,0.2); }
+.select-value-color-purple { background-color: rgba(103,36,222,0.2); }
+.select-value-color-pink { background-color: rgba(221,0,129,0.2); }
+.select-value-color-red { background-color: rgba(255,0,26,0.2); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="dd8f02b1-7b62-4f95-b987-6b1a7ccc39f0" class="page sans"><header><img class="page-cover-image" src="https://www.notion.so/images/page-cover/met_william_morris_1875.jpg" style="object-position:center 0%"/><div class="page-header-icon page-header-icon-with-cover"><img class="icon" src="Untitled%20dd8f02b17b624f95b9876b1a7ccc39f0.jpg"/></div><h1 class="page-title">个人简历</h1></header><div class="page-body"><p id="fb124c1c-e207-4578-9294-9f78606cf887" class="">姚静恋 | 产品设计师</p><p id="fc5de71d-4c45-46db-b3cc-47ff83248ece" class="">5年以上交互设计+1.5年产品经验，当前职位：产品经理</p><p id="a5655825-266c-48d4-85c8-93ba30f70758" class="">2011年-广东松山职业技术学院，大专，电子信息工程技术专业（目前【深大_金融本科_自考中】，预计2021年完成学业）</p><p id="70a3b1db-62c7-4363-8d4a-acc403bd1e02" class="">QQ 591844665 | 158-2078-0481 | <a href="mailto:xiaonanyjl2008@139.com">xiaonanyjl2008@139.com</a> </p><h1 id="f3225ff9-d10b-4bd9-8e83-9fff39fb7298" class="">工作履历</h1><p id="651b95b7-2827-49e0-8951-f4b765e599b4" class="">
+</p><h3 id="33530f8f-229d-4e78-af16-e2ab89eb0886" class="">香港金道集团_投资子公司（3年）</h3><ul id="f97eb79f-d951-43da-8ea7-56faee049f58" class="bulleted-list"><li><mark class="highlight-blue_background"><strong>2019.12-至今，百兆合安，ToB服务-用户侧产品经理</strong></mark><ul id="b3372520-1410-4228-abb0-191c554eae96" class="toggle"><li><details open=""><summary>主要工作：负责B2B2C交易服务_用户侧_产品管理及设计，并与港台团队协作</summary><ul id="62a62fbe-e5f5-4393-8433-f0a565348409" class="bulleted-list"><li>基于【IG Group、MT4/5】等国际基础行情引擎，提供【交易标准H5、APP】</li></ul><ul id="231af791-f296-4185-81a3-741e37026de7" class="bulleted-list"><li>基于公司战略规划及业务领域调研，输出【同账号多业务及风控结构-产品设计方案】、【IG-CFD牛熊期权-产品设计方案】</li></ul><ul id="e3ed2426-d801-47a4-aa8c-48cd2fca2dbb" class="bulleted-list"><li>作为服务对外接口人，与香港、台湾团队进行服务协调及协作</li></ul></details></li></ul><ul id="90c253b4-8667-4ab9-bbe6-c6ee4d905248" class="toggle"><li><details open=""><summary>项目产出：Cats_标准化H5（中英版）、iOS、安卓</summary><ul id="a8c8d4d7-d658-4524-b771-97b0664d3eed" class="bulleted-list"><li>因内部环境限制，产品不方便对外</li></ul></details></li></ul></li></ul><ul id="e9fd17ff-774b-4d78-add3-46166580c8e4" class="bulleted-list"><li><mark class="highlight-blue_background"><strong>2018.12-2019.12，万威国际，B端_产品经理</strong></mark><ul id="f2df9764-96da-45b8-9743-9a07367be8c6" class="toggle"><li><details open=""><summary>主要工作：为B端客户提供【证券交易_标准APP及管理后台服务】、从0到1与团队开发【第三方插件_CFD智能盯盘】产品</summary><ul id="f285f83b-eeef-4bef-9a35-df638c2c37c7" class="bulleted-list"><li>研究深沪港通、港股、美股证券交易规则及行业top证券竞品业务分析，并基于内部系统，对APP、B端后台改造以适应证券业务运行，产品负责人</li></ul><ul id="24f01b57-ec88-4a1f-b6bf-820be014717b" class="bulleted-list"><li>与算法产品、分析师一同研究行业特性，并基于算法+用户数据+业务特性 从0到1开发迭代【CFD智能盯盘】服务（交易数据与盯盘使用数成正相关增长）</li></ul></details></li></ul><ul id="7400f0ff-f59e-437b-8314-75203a44f301" class="toggle"><li><details open=""><summary>项目产出：IAI Trade 智能盯盘</summary><ul id="86b5bace-5e5a-43f7-a21c-0a02d653d1b1" class="bulleted-list"><li>公众号搜索“IAI Trade”</li></ul></details></li></ul></li></ul><ul id="0dd40ea6-288f-4a42-b237-3c0bedf76a15" class="bulleted-list"><li><mark class="highlight-blue_background"><strong>2018.06-2018.11，鲸语科技，B端_高级交互设计师</strong></mark><ul id="af8b66e2-cfb3-46ec-995d-c8cb759bc8fc" class="toggle"><li><details open=""><summary>主要工作：为B端客户提供【CFD交易APP_插件化客户端】设计；为集团提供【国际汇兑服务客户端】设计</summary><ul id="ea778aef-8bd8-496e-8de7-4fd7a31cd688" class="bulleted-list"><li>【插件化_客户定制版】，交互设计负责人</li></ul><ul id="88de816f-3ea9-4238-9304-9fef27a7b65d" class="bulleted-list"><li>【插件化_APP管理后台_2.0】，产品设计师</li></ul><ul id="4196b0da-696c-4941-b0b2-1b2d3432596b" class="bulleted-list"><li>【Mega Pay汇兑APP】，交互设计负责人</li></ul></details></li></ul><ul id="d5381038-ec2d-4e50-af31-7795e3c3fd7a" class="toggle"><li><details open=""><summary>项目产出：插件化_交易APP_定制版、APP管理后台_2.0、Mega Pay汇兑_1.0 APP</summary><ul id="3a10cb5f-2bc9-4a52-b6de-e0c92e168304" class="bulleted-list"><li>【插件化_交易APP_定制版】线上服务客户4家：新增输出【资讯、运营活动】插件交互设计</li></ul><ul id="adb38331-9b98-49bf-9424-16a7e8622748" class="bulleted-list"><li>【APP管理后台_2.0】已上线：输出【权限及角色分配管理、APP版本上架】功能产品设计</li></ul><ul id="db1be1ea-9cde-4b46-a834-c1f65838f73a" class="bulleted-list"><li>【Mega Pay】已上架GooglePlay：基于国际汇兑业务竞品分析及用户习惯研究，输出【安卓风格_适用于菲佣等用户群体】汇兑服务交互设计、界面语言翻译</li></ul></details></li></ul><ul id="9754c8cd-5699-498f-85a6-38f6ff3209e6" class="toggle"><li><details open=""><summary>APP下载</summary><p id="9fbb0d04-481f-4807-9c91-3590b76ab3cb" class=""><a href="https://play.google.com/store/apps/details?id=com.jingyu.replugin.mainuiplugin">Mega Pay汇兑APP</a></p></details></li></ul></li></ul><ul id="6d70acd0-3c1e-4984-8adf-f10a67bcd29b" class="bulleted-list"><li><mark class="highlight-blue_background"><strong>2017.03-2018.06，盖威科技，集团产品部_高级交互设计师</strong></mark><ul id="77cb9b9a-7e1f-4f2e-a439-e1bd1d218ee8" class="toggle"><li><details open=""><summary>主要工作：独立负责【大盈财讯】、【简版交易APP】交互设计；交易客户端体验研究及标准化设计（插件化前身）</summary><ul id="c94e69b6-154a-4b24-8edf-06386961533b" class="bulleted-list"><li>大盈财讯_1.0 APP，交互负责人</li></ul><ul id="8c7dd7f6-97d5-4a49-86d0-216923f2adc8" class="bulleted-list"><li>简版交易_1.0 APP，交互负责人</li></ul><ul id="8354038e-883f-4744-b396-e3d0a796480a" class="bulleted-list"><li>交易客户端体验研究及标准化设计，项目主导者及交互负责人</li></ul></details></li></ul><ul id="8cab0aca-49b7-4c0e-98b0-febb0ea5d083" class="toggle"><li><details open=""><summary>项目产出：大盈财讯_1.0 APP、简版交易_1.0 APP、交易模块标准化APP</summary><ul id="83611f6f-0bb2-4eea-a4a9-bd761d5df2a6" class="bulleted-list"><li>【大盈财讯_1.0】该项目之后独立公司：输出【财经日历、多类型资讯、快讯】等标准化模块交互设计及规范，标准化模块被多个事业部应用</li></ul><ul id="8e062587-0ed0-47ac-bb1d-131576f20af0" class="bulleted-list"><li>【简版交易_1.0】该项目之后被事业部应于线上业务：基于贵金属业务及专业版交易规则，输出【简版交易】完整产品交互设计</li></ul><ul id="c4dc0822-fde2-471e-967f-45901699d814" class="bulleted-list"><li>【CFD交易标准化APP】该项目之后升级为插件化项目：基于事业部业务数据及行业竞品分析，输出【交易标准】等模块标准化交互设计及交互规范，最终以【APP_插件化】方式独立开发</li></ul></details></li></ul></li></ul><p id="38c4e543-87a0-4580-927a-824bfb72e141" class="">
+</p><h3 id="10fc02a5-052e-43f1-9fbd-dee8b29b49c2" class="">嗒嗒巴士（1年）</h3><ul id="0d32c7d3-d437-42a2-84d9-1797ee9c0c7e" class="bulleted-list"><li><mark class="highlight-blue_background"><strong>2016.02-2016.12，C端_高级交互设计师</strong></mark><ul id="5dc9e715-8f3b-4a86-b4af-d4bc55effd8d" class="toggle"><li><details open=""><summary>主要工作：乘车客户端用户体验优化设计</summary><ul id="701e1385-73f8-4c03-b745-63df4694b0e3" class="bulleted-list"><li>主导梳理用户乘车服务、体验问题，并提供部分方案设计</li></ul><ul id="9aa6197f-122e-4980-80af-cfe05f49d4f1" class="bulleted-list"><li>主要负责乘客端的体验优化及改版设计、运营助手APP设计、发嗒财广告项目用户侧的交互设计</li></ul><ul id="58ff5a86-46fe-4426-bdc9-99916c931407" class="bulleted-list"><li>协助PM输出业务及用户体验等关键数据埋点</li></ul><ul id="9acda13f-1211-4f84-be48-acc83a9b6de6" class="bulleted-list"><li>辅导公司UI、交互设计师成长，并推动设计规范输出</li></ul></details></li></ul><ul id="56f1c098-06d2-4f33-bb4c-3feb64c0a9e0" class="bulleted-list"><li>项目产出：【乘客端】共10个优化版本、1个大改版设计、1个大业务升级设计</li></ul><ul id="c8346c61-1b66-40e1-a874-ccf1c0c8004e" class="toggle"><li><details open=""><summary>作品集</summary><p id="e4f7ea90-622a-49fa-8906-432415ffa5c7" class="">链接:<a href="https://pan.baidu.com/s/1_rDfCgGPNscj_rM28jiLpw">https://pan.baidu.com/s/1_rDfCgGPNscj_rM28jiLpw</a> 密码:nyxr</p><p id="e15e99f2-1ad7-4719-b0ea-ad94c9cc9778" class="">（不方便对外，如想了解更多请前往查看）</p></details></li></ul><p id="6dcaa0a9-1d9d-4112-9e58-fe0ac3a62f8b" class="">
+</p></li></ul><h3 id="1a1cd561-27ed-487c-a57f-8485d2c8c645" class="">深圳蜘蛛旅游科技有限公司（1年）</h3><ul id="cb17cd9d-13c9-4902-96ae-7a01be57cea4" class="bulleted-list"><li><mark class="highlight-blue_background"><strong>2015.03-2016.02，交互设计师</strong></mark><ul id="1a75153a-a770-43e2-8fb6-1b1f63540ad0" class="toggle"><li><details open=""><summary>主要工作：B端订房APP设计、C端周边游MVP设计、参与酒店B端用户调研及平台交互设计</summary><ul id="a525ea60-50ec-4bef-8cf7-a49feaee5bfb" class="bulleted-list"><li>与PM及业务人员一起参与用户调研、访谈、整理产品及用户需求</li></ul><ul id="35dfe367-2f2b-46af-af09-138d45b2f885" class="bulleted-list"><li>主要负责B端订房APP 1.0、C端周边游MVP H5项目设计及可用性测试</li></ul><ul id="a32af4f9-9db6-4f9b-b7b3-a6fa35d542ce" class="bulleted-list"><li>同时参与B端旅行社平台、H端酒店平台等后台优化及部分模块设计</li></ul></details></li></ul><ul id="c8f09949-5b68-421e-a81a-0c5a75b42eba" class="bulleted-list"><li>项目产出：Z-Booking APP 1.0、去不去周边游_H5_1.0</li></ul><p id="8b652f80-0c6e-4336-9c71-27aeea9eb280" class="">
+</p></li></ul><h3 id="c6c5a020-e0e7-4543-9112-c8e1fc51ac21" class="">深圳云来科技有限公司（1年）</h3><ul id="da3e3af9-89ba-4f76-83ac-4c57049defda" class="bulleted-list"><li><mark class="highlight-blue_background"><strong>2014.03-2015.03，UI设计师、交互设计师</strong></mark><ul id="cf7970b4-d526-42e4-a620-f0a70b3e6e1a" class="toggle"><li><details open=""><summary>主要工作：互动H5客户官网UI设计及维护、互动H5制作平台交互及UI设计</summary><ul id="dc93427f-837e-4e37-a0f2-34890cb06a65" class="bulleted-list"><li>主要负责【互动H5】场景store官网UI设计与维护、参与互动H5模板的策划与UI设计</li></ul><ul id="fd2e987c-e440-4b05-be9b-c8b4c70d5c4b" class="bulleted-list"><li>独立负责【互动H5】场景引擎1.0（一个制作互动H5的工具平台）整体交互及UI设计、UI规范输出</li></ul><ul id="30d3391a-a4f5-4ae1-86b3-45572d349439" class="bulleted-list"><li>负责社区APP的UI迭代、社区物业系统交互设计</li></ul></details></li></ul></li></ul><p id="ccfa45f9-97fc-4df4-a094-37f9ed6dab04" class="">
+</p><h1 id="e0afa814-5fa7-44e0-ba7e-4bfca8cf4550" class="">能力介绍</h1><div id="8c3d279a-f449-4d61-bd31-8cceaf3f884c" class="column-list"><div id="2f5865db-8222-4459-8f9f-5a2b1c298a41" style="width:18.75%" class="column"><p id="0cf2b183-3eba-47bd-9efd-24dabd4150fc" class="">用户研究            <mark class="highlight-yellow">★★★★☆</mark>  </p><p id="5c05590a-17bf-4186-a2ef-51e01d994baa" class="">设计能力            <mark class="highlight-yellow">★★★★★</mark></p><p id="628288af-e746-4d5b-9587-51367ba7de91" class="">产品/运营能力    <mark class="highlight-yellow">★★★★☆</mark></p><p id="97653543-d552-474d-8238-2c7373842ad8" class="">数据分析            <mark class="highlight-yellow">★★★★☆</mark></p><p id="8266a33f-09e6-443a-9d29-fa68ba127345" class="">项目管理            <mark class="highlight-yellow">★★★★☆</mark></p><p id="f2bef8a6-f870-434c-b3fc-b85aff05c2e4" class="">
+</p></div><div id="6720d0f5-4585-4ab4-887e-b52240820a87" style="width:81.25%" class="column"><ul id="a8916b82-8373-48ce-a1a8-24630f4847f6" class="bulleted-list"><li>擅长深入用户场景研究、上线前可用性测试、上线后用户数据分析等研究方法</li></ul><ul id="f6e72916-15c8-4945-8a66-b3b2a588ccd3" class="toggle"><li><details open=""><summary>展开了解</summary><ul id="042b7813-54f7-4c02-bbda-0a1e930241e6" class="bulleted-list"><li>在熟悉业务的基础上，能快速提供设计方案及推动项目</li></ul><ul id="f572e9e1-10dd-4784-a8b8-7fc6774cef01" class="bulleted-list"><li>熟悉掌握角色&amp;场景分析、体验&amp;情绪地图等方法，输出低保真、动态原型，进行可用性测试等</li></ul><ul id="1a04aef0-28b2-4f33-b092-1be4264df756" class="bulleted-list"><li>熟悉iOS及安卓平台设计规范，主导过UI、交互设计规范输出、交互文档输写规范</li></ul><ul id="0a3005af-8365-4c65-8a21-670fdede02e1" class="bulleted-list"><li>熟悉掌握界面色彩学、信息传达等视觉表现方法</li></ul></details></li></ul><ul id="e18022a8-7e7e-4469-87db-3cb57a600a14" class="bulleted-list"><li>关注业务营收及增长目标，专注于“提供友好用户体验”的同时，以”运营思维“为基础设计活动玩法，有针对性地服务于产品各阶段的增长诉求</li></ul><ul id="4f7e5e20-903b-4bb4-9106-765cfe5362ca" class="bulleted-list"><li>掌握：GA、Excel数据工具，分析及梳理过产品体验流程中关键节点的转化数据埋点</li></ul><ul id="82f4af23-3ae9-4014-9ecb-c8a5397b2c27" class="bulleted-list"><li>在多团队、跨团队中能保持进度不失控及交付</li></ul><p id="091e0e92-79aa-44b3-afdf-c17b55484702" class="">
+</p></div></div><p id="a4460bf3-6850-4d54-aac5-5ce0d0d859d4" class="">
+</p><p id="5ab18e61-fd79-48ae-84b3-b80e714ead51" class="">最后，感谢您的阅读 ~</p></div></article></body></html>
